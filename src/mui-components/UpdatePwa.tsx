@@ -22,12 +22,14 @@ const UpdatePwa = () => {
   return (
     <Tooltip title="Atualizar o app" arrow>
       <Button
-        color="primary"
-        variant="contained"
+        color="inherit"
+        size="small"
+        variant="outlined"
+        aria-label="Atualizar o app"
         onClick={handleUpdateClick}
+        sx={{ alignSelf: 'center' }}
         startIcon={<RefreshIcon />}
       >
-        Atualizar
       </Button>
     </Tooltip>
   );
