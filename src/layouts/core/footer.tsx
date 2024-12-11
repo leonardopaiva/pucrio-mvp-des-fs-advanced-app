@@ -16,6 +16,7 @@ import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import InstallPwa from '../../mui-components/InstallPwa';
 import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
 import AppGlobalStatesService from '../../services/AppGlobalStatesService';
+import UpdatePwa from '../../mui-components/UpdatePwa';
 
 export default function Footer() {
   return (
@@ -53,7 +54,7 @@ export default function Footer() {
                 sx={{ '&:hover': { color: 'primary.main', textDecoration: 'underline' } }}>
                   MVP 2 - Puc Rio - Pós Graduação Desenvolvimento Full Stack 
               </Link>
-              <div className='test-update-cache'>v3</div>
+              <div className='test-update-cache'>v4</div>
 
             </div>
             <div>
@@ -81,6 +82,7 @@ export default function Footer() {
             }}
           >
             <InstallPwa />
+            <UpdatePwa />
             <Tooltip title="Diminuir tamanho do texto" arrow>
               <IconButton
                 color="inherit"
