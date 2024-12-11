@@ -53,7 +53,7 @@ export default function Footer() {
                 sx={{ '&:hover': { color: 'primary.main', textDecoration: 'underline' } }}>
                   MVP 2 - Puc Rio - Pós Graduação Desenvolvimento Full Stack 
               </Link>
-              <div className='test-update-cache'>v2</div>
+              <div className='test-update-cache'>v3</div>
 
             </div>
             <div>
