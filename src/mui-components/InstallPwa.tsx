@@ -32,7 +32,7 @@ export default function InstallButton() {
 
   function handleInstallClick(): void {
     if (isInstalled) return window.alert('O aplicativo já está instalado!');
-    if (!deferredPrompt) return window.alert('Parece que o seu navegador não suporta a instalação do PWA ou ele já está instalado.');
+    // if (!deferredPrompt) return window.alert('Parece que o seu navegador não suporta a instalação do PWA ou ele já está instalado.');
 
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then((choiceResult: any) => {
