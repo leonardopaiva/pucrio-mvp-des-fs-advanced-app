@@ -1,4 +1,17 @@
 
+/* will fix the delay for clicks in mobile */
+* {
+  touch-action: manipulation!important;
+}
+
+.test-update-cache {
+  background-color: #900!important;
+  color: #fff;
+  border: 1px solid #fff!important;
+  display: inline-block;
+  margin: 3px;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
