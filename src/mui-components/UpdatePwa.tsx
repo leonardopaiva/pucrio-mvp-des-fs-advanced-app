@@ -12,6 +12,7 @@ const UpdatePwa = () => {
         .then((registration) => {
           registration.update(); // Força a atualização do service worker
           alert('O app está sendo atualizado!');
+          window.location.reload();
         })
         .catch((error) => {
           console.error('Erro ao tentar atualizar o PWA:', error);
