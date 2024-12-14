@@ -45,7 +45,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 **Student**: Leonardo Souza Paiva  
 **Portfolio**: [www.leonardopaiva.com](http://www.leonardopaiva.com)  
-**FIGMA**: [FIGMA](https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1)
-**MVP DEMO ONLINE APP**: [MVP DEMO ONLINE APP](https://pucriomvp2.leonardopaiva.com/)
-**MVP DEMO Video**: [MVP Demo Video](https://youtu.be/0d-6IUMoDWs)
+**FIGMA**: [FIGMA](https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1)  
+**MVP DEMO ONLINE APP**: [MVP DEMO ONLINE APP](https://pucriomvp2.leonardopaiva.com/)  
+**MVP DEMO Video**: [MVP Demo Video](https://youtu.be/0d-6IUMoDWs)  
 
