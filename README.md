@@ -23,6 +23,7 @@ To install the app, click on the 'Install' button located in the footer.
 - Change theme color (local storage)
 - Change theme between light and dark mode. 
 - Install App (PWA)
+- PWA, the app works offline.
 - Copy one appointment, making ease to create a new appointment based on another one
 - Increase font size in the app (accessibility feature).
 - Fix click delay on mobile devices with a CSS rule (no need for FastClickJS or similar js):
@@ -37,15 +38,15 @@ To install the app, click on the 'Install' button located in the footer.
 - Sync between online and offline data.
 
 
-# React + TypeScript + Vite
+# React + TypeScript + Vite + PWA + MUI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+These are some of the technologies used in this app.
 
 # Some links
 
 **Student**: Leonardo Souza Paiva  
 **Portfolio**: [www.leonardopaiva.com](http://www.leonardopaiva.com)  
 **FIGMA**: [https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1](https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1)  
-**MVP DEMO ONLINE APP**: [https://pucriomvp2.leonardopaiva.com](https://pucriomvp2.leonardopaiva.com/)  
+**MVP DEMO ONLINE WEB APP/PWA**: [https://pucriomvp2.leonardopaiva.com](https://pucriomvp2.leonardopaiva.com/)  
 **MVP DEMO Video**: [https://youtu.be/0d-6IUMoDWs](https://youtu.be/0d-6IUMoDWs)  
 
