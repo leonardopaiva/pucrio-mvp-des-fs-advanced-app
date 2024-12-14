@@ -44,7 +44,7 @@ These are some of the technologies used in this app.
 
 # Thanks to the MVP professors
 
-Thanks to the MVP professors, Marisa Silva and Dienison Braga.
+Thanks to the MVP professors, Marisa Silva and Dieinison Braga.
 
 # Some links
 
