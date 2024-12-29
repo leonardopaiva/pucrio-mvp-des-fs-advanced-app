@@ -140,8 +140,9 @@ export default function Footer() {
               <IconButton
                 color="inherit"
                 size="small"
-                href="https://github.com/mui"
+                href="https://github.com/leonardopaiva/pucrio-mvp-front-end-advanced-app"
                 aria-label="GitHub"
+                target="_blank"
                 sx={{ alignSelf: 'center' }}
               >
                 <FacebookIcon />
