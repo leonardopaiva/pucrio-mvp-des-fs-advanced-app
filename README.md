@@ -6,7 +6,7 @@ The goal of this app/pwa is to allow the user to organize their medical appointm
 
 Additionally, the user will be able to install the app and run it offline, as this is a Progressive Web App (PWA). All interactions will be saved in the local storage whenever there is no internet connection or when the server is unavailable. In a future version, it will be possible to synchronize the offline content with the online content
 
-To install the app, click on the 'Install' button located in the footer.
+To install the app, click on the 'Install' button located in the footer..
 
 ## Commands
 - npm install
