@@ -1,5 +1,5 @@
 # Dockerfile para o app React (frontend)
-# Deve estar na pasta ./app, conforme o contexto do docker-compose
+# Deve estar na pasta ./app, conforme o contexto do docker-composee
 # deve-se rodar o comando npm run pwa para que exista o conteudo do dist/
 
 FROM nginx:alpine
