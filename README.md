@@ -42,11 +42,12 @@ This will build the app by creating the "dist" folder, which is necessary for th
 
 ## APP features
 
-- Create appointment (local storage)
 - Appointment List in calendar (local storage)
-- Appointment List in Google MAP
+- Appointment List in Google Maps (External api will need connection to work)
 - Appointment Normal list (local storage)
-- Appointment Delete appointment (local storage)
+- Appointment Create (local storage)
+- Appointment Update (local storage)
+- Appointment Delete (local storage)
 - Appointment Sync localstorage appointment data with cloud, create, update and deleted data.
 - Copy one appointment, making ease to create a new appointment based on another one
 - Change App Font and containers size
