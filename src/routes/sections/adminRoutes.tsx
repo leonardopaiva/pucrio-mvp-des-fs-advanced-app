@@ -1,5 +1,5 @@
-import Dashboard from "../pages/admin/dashboard/Dashboard";
-import Settings from "../pages/admin/settins/Settings";
+import Dashboard from "../../pages/admin/dashboard/Dashboard";
+import Settings from "../../pages/admin/settins/Settings";
 
 const adminRoutes = [
   {

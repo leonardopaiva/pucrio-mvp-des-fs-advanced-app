@@ -1,6 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import AppAppBar from '../../../mui-components/AppAppBar';
+import AppAppBar from '../../../mui-components/AppBar/MainAppBar';
 import MainContent from '../../../mui-components/MainContent';
 import Latest from '../../../mui-components/Latest';
 import Footer from '../../../mui-components/Footer';

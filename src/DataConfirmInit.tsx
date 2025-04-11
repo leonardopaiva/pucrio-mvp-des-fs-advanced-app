@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@mui/material';
-import { DATA_APPOINTMENTS } from './data-appointments'; 
+import { DATA_APPOINTMENTS } from './data-appointments';
 import LocalStorageService from './services/LocalStorageService';
+import { generateSyncQueueItems } from './services/SyncQueueMock';
 
 /* Component to ask if the user wants to initialize some dummy data */
 /* triggers if user have no appointment created */
 /* DATA_APPOINTMENTS is the dummy data */
 export default function DataConfirmInit() {
-  const [openDialog, setOpenDialog] = useState(false); 
+  const [openDialog, setOpenDialog] = useState(false);
   const [isDataEmpty, setIsDataEmpty] = useState(false);
 
   /*
@@ -15,13 +16,14 @@ export default function DataConfirmInit() {
     * Open the dialog asking the user if they want to initialize dummy data
    */
   function checkDataInStorage() {
+
     const localStorageService = new LocalStorageService('appointments');
     const items = localStorageService.listItems();
 
     if (items.length > 0) return;
 
     setIsDataEmpty(true);
-    setOpenDialog(true); 
+    setOpenDialog(true);
 
     console.log('isDataEmpty:', isDataEmpty);
   }
@@ -30,13 +32,18 @@ export default function DataConfirmInit() {
     * Function to initialize dummy data into localStorage
     * Adds the dummy data to localStorage
     * will reload app after finish
+    * initialize sync queue too
+    * also sets the list in sync-queue local storage
    */
   function initializeDummyData() {
     const localStorageService = new LocalStorageService('appointments');
     DATA_APPOINTMENTS.forEach(appointment => {
-      localStorageService.addItem(appointment); 
+      localStorageService.addItem(appointment);
     });
-    setOpenDialog(false); 
+    setOpenDialog(false);
+
+    const syncItems = generateSyncQueueItems();
+    localStorage.setItem('sync-queue', JSON.stringify(syncItems));
 
     window.location.reload();
   }

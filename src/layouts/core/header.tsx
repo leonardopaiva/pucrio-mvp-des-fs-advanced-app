@@ -1,7 +1,7 @@
-import AppAppBar from '../../mui-components/AppAppBar';
+import MainAppBar from '../../mui-components/AppBar/MainAppBar';
 
 export default function Header() {
   return (
-    <AppAppBar />
+    <MainAppBar />
   );
 }

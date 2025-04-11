@@ -1,12 +1,38 @@
-# MVP - Puc Rio - Front-End Advanced
+# MVP3 - Puc Rio - Full Stack Development Advanced
 
-This is the second MVP of the Full Stack Development Postgraduate Program at PUC Rio University, Rio de Janeiro.
+# Overview
 
-The goal of this app/pwa is to allow the user to organize their medical appointments, enabling them to register, update, and view appointments in a list or calendar format.
+This is the third MVP of the Full Stack Development Postgraduate Program at PUC Rio University, Rio de Janeiro.
 
-Additionally, the user will be able to install the app and run it offline, as this is a Progressive Web App (PWA). All interactions will be saved in the local storage whenever there is no internet connection or when the server is unavailable. In a future version, it will be possible to synchronize the offline content with the online content
+The goal of this app/PWA is to allow the user to organize their medical appointments, enabling them to register, update, and view appointments in a list, calendar, or map format.
 
-To install the app, click on the 'Install' button located in the footer..
+Additionally, the user will be able to install the app and run it offline, as this is a Progressive Web App (PWA). All interactions will be saved in local storage whenever there is no internet connection or when the server is unavailable. Whenever the user wishes, they can synchronize their data with the cloud.
+
+To install the app, when running the app, click on the 'Install' button located in the footer; this will create a shortcut for the app on your mobile or desktop.
+
+The idea for this app is that it operates entirely offline— all authenticated operations work by saving data in local storage, without making the user wait for an API request. Afterwards, the user can synchronize their data with the API.
+
+## How to Run the MVP with all micro services
+ 
+This project also comes with a Dockerfile, which provides an additional option for starting up. To better understand how to use it, please refer to the docker-compose.yml in the gateway api repository of this MVP.  
+ 
+For the entire MVP to work, the microservices must be executed using a docker-compose.yml in the gateway api repository.
+
+To learn how to run the full MVP, visit the gateway api repository at the provided link.
+
+## Important Note
+
+Before running this app with Docker, you need to enter the app folder and run the commands:
+- npm install
+- npm run pwa
+
+This will build the app by creating the "dist" folder, which is necessary for the docker-compose.yml or Dockerfile to work.
+
+## Local and Env Variables
+
+- rename .env.local.demo to .env.local and set the VITE_GOOGLE_MAPS_API_KEY value to make the Google Maps Api work.
+- set the VITE_API_URL value for .env.production when runing the app with docker
+- set the VITE_API_URL value for .env.development when runing the app locally with 'npm run dev'
 
 ## Commands
 - npm install
@@ -17,14 +43,21 @@ To install the app, click on the 'Install' button located in the footer..
 ## APP features
 
 - Create appointment (local storage)
-- List in calendar (local storage)
-- Normal list (local storage)
-- Delete appointment (local storage)
+- Appointment List in calendar (local storage)
+- Appointment List in Google MAP
+- Appointment Normal list (local storage)
+- Appointment Delete appointment (local storage)
+- Appointment Sync localstorage appointment data with cloud, create, update and deleted data.
+- Copy one appointment, making ease to create a new appointment based on another one
+- Change App Font and containers size
 - Change theme color (local storage)
 - Change theme between light and dark mode. 
+- Register a user
+- Confirm register with a user code sent by email
+- Login with a user
 - Install App (PWA)
 - PWA, the app works offline.
-- Copy one appointment, making ease to create a new appointment based on another one
+- Mobile and Desktop responsive design.
 - Increase font size in the app (accessibility feature).
 - Fix click delay on mobile devices with a CSS rule (no need for FastClickJS or similar js):
 * {
@@ -33,10 +66,7 @@ To install the app, click on the 'Install' button located in the footer..
 
 ## TODO:
 
-- Save some features in localstorage
-- Create back-end to save data online
-- Sync between online and offline data.
-
+- Test more sync situations.
 
 # React + TypeScript + Vite + PWA + MUI
 
@@ -44,13 +74,11 @@ These are some of the technologies used in this app.
 
 # Thanks to the MVP professors
 
-Thanks to the MVP professors, Marisa Silva and Dieinison Braga.
+Thanks to the MVP professors, Marisa Silva, Dieinison Braga and Carlos Rocha.
 
 # Some links
 
 **Student**: Leonardo Souza Paiva  
 **Portfolio**: [www.leonardopaiva.com](http://www.leonardopaiva.com)  
-**FIGMA**: [https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1](https://www.figma.com/design/1mTVz0aJpCWwYwBc3ylywD/PUC-Rio---MVP---Leonardo-Souza-Paiva---Front-End-Advanced?node-id=22-5394&t=gAfh9MewJsIO6Fz1-1)  
-**MVP DEMO ONLINE WEB APP/PWA**: [https://pucriomvp2.leonardopaiva.com](https://pucriomvp2.leonardopaiva.com/)  
 **MVP DEMO Video**: [https://youtu.be/0d-6IUMoDWs](https://youtu.be/0d-6IUMoDWs)  
 

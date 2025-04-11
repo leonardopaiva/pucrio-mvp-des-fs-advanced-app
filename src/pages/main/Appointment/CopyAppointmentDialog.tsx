@@ -3,7 +3,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import { Appointment } from '../../../services/interfaces';
 
 interface CopyAppointmentDialogProps {
@@ -20,8 +19,8 @@ interface CopyAppointmentDialogProps {
 */
 export default function CopyAppointmentDialog({ open, handleClose, appointmentList, handleCopyAppointment }: CopyAppointmentDialogProps) {
   const handleCopy = (appointment: Appointment) => {
-      handleCopyAppointment(appointment); 
-      handleClose();
+    handleCopyAppointment(appointment);
+    handleClose();
   };
 
   return (
@@ -37,14 +36,14 @@ export default function CopyAppointmentDialog({ open, handleClose, appointmentLi
         sx: { backgroundImage: 'none' },
       }}
     >
-      <DialogTitle>Reset password</DialogTitle>
+      <DialogTitle>Copy Appointment</DialogTitle>
       <DialogContent
         sx={{ display: 'flex', flexDirection: 'column', gap: 2, width: '100%' }}
       >
         <DialogContentText>
           Clique no botão copiar da consulta listada, ao fazer isso, o conteúdo do formulário será substituído pelo da consulta selecionada.
         </DialogContentText>
-        
+
         {appointmentList && appointmentList.length > 0 ? (
           <ul>
             {appointmentList.map((appointment: Appointment, index) => (
@@ -60,18 +59,7 @@ export default function CopyAppointmentDialog({ open, handleClose, appointmentLi
           <p>Sem consultas disponíveis.</p>
         )}
 
-        <OutlinedInput
-          autoFocus
-          required
-          margin="dense"
-          id="email"
-          name="email"
-          label="Email address"
-          placeholder="Email address"
-          type="email"
-          fullWidth
-          sx={{visibility: 'hidden'}}
-        />
+
       </DialogContent>
       {/* <DialogActions sx={{ pb: 3, px: 3 }}>
         <Button onClick={handleClose}>Cancel</Button>

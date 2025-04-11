@@ -3,6 +3,7 @@ import MainContentAppointments from "./MainContentAppointments";
 import AppGlobalStatesService from "../../../services/AppGlobalStatesService";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { Tooltip } from "@mui/material";
+import PageContainer from "../../../components/PageContainer";
 
 
 export default function ListAppointments() {
@@ -15,11 +16,13 @@ export default function ListAppointments() {
   return (
     <>
       {exampleGlobalState && (
-            <Tooltip title="Like">
-              <ThumbUpIcon />
-            </Tooltip>
-          )}
-      <MainContentAppointments />
+        <Tooltip title="Like">
+          <ThumbUpIcon />
+        </Tooltip>
+      )}
+      <PageContainer>
+        <MainContentAppointments />
+      </PageContainer>
     </>
   );
 }

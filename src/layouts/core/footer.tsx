@@ -8,14 +8,9 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import { Tooltip } from '@mui/material';
-import { decreaseFontSize, increaseFontSize } from '../../util/body-size';
 
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
-import FormatSizeIcon from '@mui/icons-material/FormatSize';
 import InstallPwa from '../../mui-components/InstallPwa';
 import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
-import AppGlobalStatesService from '../../services/AppGlobalStatesService';
 import UpdatePwa from '../../mui-components/UpdatePwa';
 
 export default function Footer() {
@@ -49,24 +44,24 @@ export default function Footer() {
             <div>
               <Link
                 color="text.secondary"
-                href="https://especializacao.ccec.puc-rio.br/especializacao/desenvolvimento-full-stack" 
+                href="https://especializacao.ccec.puc-rio.br/especializacao/desenvolvimento-full-stack"
                 target="_blank"
                 sx={{ '&:hover': { color: 'primary.main', textDecoration: 'underline' } }}>
-                  MVP 2 - Puc Rio - Pós Graduação Desenvolvimento Full Stack 
+                MVP 3 - Puc Rio  <div className='test-update-cache'>v1</div>
+                <br /> Pós Graduação Desenvolvimento Full Stack
               </Link>
-              <div className='test-update-cache'>v5</div>
 
             </div>
             <div>
               <Link
                 color="text.secondary"
-                href="https://leonardopaiva.com" 
+                href="https://leonardopaiva.com"
                 target="_blank"
                 sx={{ '&:hover': { color: 'primary.main' }, textDecoration: 'none' }}>
-                  Leonardo Souza Paiva - www.leonardopaiva.com
+                Leonardo Souza Paiva - www.leonardopaiva.com
               </Link>
             </div>
-            <Typography sx={{color: 'text.secondary'}}>© Copyright 2024. All Rights Reserved by </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>© Copyright 2025. All Rights Reserved by </Typography>
           </div>
 
           {/* Icons section */}
@@ -75,61 +70,23 @@ export default function Footer() {
             spacing={1}
             useFlexGap
             sx={{
-              justifyContent: 'flex-end', // Align icons to the right
-              gap: { xs: 1, sm: 1 }, // Gap between icons (smaller on mobile)
+              justifyContent: 'flex-end',
+              gap: { xs: 1, sm: 1 },
               alignItems: 'center',
-              flexWrap: 'nowrap', // Prevent wrapping of icons on all screen sizes
+              flexWrap: 'nowrap',
             }}
           >
             <InstallPwa />
             <UpdatePwa />
-            <Tooltip title="Diminuir tamanho do texto" arrow>
-              <IconButton
-                color="inherit"
-                size="small"
-                aria-label="Diminuir fonte"
-                sx={{ alignSelf: 'center' }}
-                onClick={decreaseFontSize}
-              >
-                <FormatSizeIcon />
-                <RemoveIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Aumentar tamanho do texto" arrow>
-              <IconButton
-                color="inherit"
-                size="small"
-                aria-label="Aumentar fonte"
-                sx={{ alignSelf: 'center' }}
-                onClick={increaseFontSize}
-              >
-                <FormatSizeIcon />
-                <AddIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Example Global State Demonstration, needs to be in appointment page" arrow>
-              <IconButton
-                color="inherit"
-                size="small"
-                aria-label="Aumentar fonte"
-                sx={{ alignSelf: 'center' }}
-                onClick={() => {
-                  const valueExampleGlobalState = AppGlobalStatesService.getExampleGlobalState();
-                  AppGlobalStatesService.setExampleGlobalState(!valueExampleGlobalState);
-                }}
-              >
-                ?
-              </IconButton>
-            </Tooltip>
 
             <ColorModeIconDropdown size="small" sx={{ alignSelf: 'center' }} />
 
-            <Typography variant="body2" sx={{ 
-              paddingTop: '0.5rem', 
-              paddingBottom: '0.5rem', 
-              paddingLeft: '0.5rem', 
-              paddingRight: '0.5rem', 
-              fontSize: '1.5rem', 
+            <Typography variant="body2" sx={{
+              paddingTop: '0.5rem',
+              paddingBottom: '0.5rem',
+              paddingLeft: '0.5rem',
+              paddingRight: '0.5rem',
+              fontSize: '1.5rem',
               color: 'text.disabled',
               display: { xs: 'none', md: 'block' }
             }}>

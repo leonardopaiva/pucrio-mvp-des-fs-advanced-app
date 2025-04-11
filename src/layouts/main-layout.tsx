@@ -1,4 +1,4 @@
-// src/components/Layout.js
+// src/components/Layout.js (ou src/layouts/main-layout.tsx)
 import { Outlet } from 'react-router-dom';
 import Footer from './core/footer';
 import { CssBaseline, Container } from '@mui/material';
@@ -7,46 +7,41 @@ import DataConfirmInit from '../DataConfirmInit';
 import Header from './core/header';
 import { useEffect, useState } from 'react';
 import AppGlobalStatesService from '../services/AppGlobalStatesService';
-
+import FloatingUserButton from '../components/FloatingUserButton';
+import { SyncQueueProvider } from '../context/SyncQueueContext';
+import { AppointmentProvider } from '../context/AppointmentContext';
+import { SharedAppProvider } from '../context/SharedAppContext';
+import { applyUserPreferences } from '../components/UserPreferencesPanel';
 
 /*
-  This is the component responsible for the entire external structure of 
-  the pages being generated in this app.
-
-  Layouts are a way to change the app's template, including its header, 
-  footer, and other structural elements. They are useful in apps that have 
-  both a logged-in user area and a landing page area with different structures.
-  In this app, it wasn't very necessary, but it was a way to make the app scalable.
+  Esse componente é responsável pela estrutura externa (header, footer, etc.) das páginas.
+  Também insere os contexts
 */
 function MainLayout(props: { disableCustomTheme?: boolean }) {
   const [optionCustomScheme, setOptionCustomScheme] = useState(false);
 
-  /*
-    optionCustomScheme
-    is used to set schema color
-    used on src/shared-theme/AppTheme.tsx 
-  */
   useEffect(() => {
     console.log('MainLayout: registered setOptionCustomScheme.')
     AppGlobalStatesService.setSetOptionCustomSchemeFn(setOptionCustomScheme);
+    applyUserPreferences();
   }, []);
-  
+
   return (
-      <AppTheme 
-        {...props} 
-        optionCustomScheme={optionCustomScheme} >
-        <CssBaseline enableColorScheme />
-        <Header /> 
-
-        <Container>
-          <Outlet /> 
-        </Container>
-
-
-        <Footer />
-
-        <DataConfirmInit />
-
+    <AppTheme {...props} optionCustomScheme={optionCustomScheme}>
+      <CssBaseline enableColorScheme />
+      <SharedAppProvider>
+        <SyncQueueProvider>
+          <AppointmentProvider>
+            <Header />
+            <Container>
+              <Outlet />
+            </Container>
+            <Footer />
+            <FloatingUserButton />
+          </AppointmentProvider>
+        </SyncQueueProvider>
+      </SharedAppProvider>
+      <DataConfirmInit />
     </AppTheme>
   );
 }

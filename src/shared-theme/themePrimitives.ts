@@ -19,7 +19,7 @@ declare module '@mui/material/styles/createPalette' {
     900: string;
   }
 
-  interface PaletteColor extends ColorRange {}
+  interface PaletteColor extends ColorRange { }
 
   interface Palette {
     baseShadow: string;
@@ -344,30 +344,30 @@ export const customSchemes = {
   light: {
     palette: {
       primary: {
-        light: '#6e3e3e', 
-        main: '#4E2A2A',  
-        dark: '#2d1818',  
-        contrastText: '#ffffff', 
+        light: '#6e3e3e',
+        main: '#4E2A2A',
+        dark: '#2d1818',
+        contrastText: '#ffffff',
       },
       info: {
-        light: '#c1d7d6',  
-        main: '#61a1a0',   
-        dark: '#2e6b6a',   
+        light: '#c1d7d6',
+        main: '#61a1a0',
+        dark: '#2e6b6a',
         contrastText: '#ffffff',
       },
       warning: {
-        light: '#f7b15c',  
-        main: '#f39c42',   
-        dark: '#e67e22',   
+        light: '#f7b15c',
+        main: '#f39c42',
+        dark: '#e67e22',
       },
       error: {
-        light: '#f2a1a1',  
-        main: '#e74c3c',   
-        dark: '#c0392b',   
+        light: '#f2a1a1',
+        main: '#e74c3c',
+        dark: '#c0392b',
       },
       success: {
-        light: '#a2d9a3',  
-        main: '#27ae60',   
+        light: '#a2d9a3',
+        main: '#27ae60',
         dark: '#1e8449',
       },
       grey: {
@@ -382,7 +382,7 @@ export const customSchemes = {
         800: '#333333',
         900: '#212121',
       },
-      divider: 'rgba(0, 0, 0, 0.12)', 
+      divider: 'rgba(0, 0, 0, 0.12)',
       background: {
         default: '#fafafa',
         paper: '#ffffff',
@@ -440,13 +440,13 @@ export const customSchemes = {
         800: '#333333',
         900: '#212121',
       },
-      divider: 'rgba(255, 255, 255, 0.12)', 
+      divider: 'rgba(255, 255, 255, 0.12)',
       background: {
         default: '#121212',
         paper: '#1e1e1e',
       },
       text: {
-        primary: '#ffffff', 
+        primary: '#ffffff',
         secondary: '#b0b0b0',
       },
       action: {
@@ -463,9 +463,9 @@ export const customSchemesOrange = {
   light: {
     palette: {
       primary: {
-        light: '#ff8042',  
-        main: '#FF5722',   
-        dark: '#e64a19',   
+        light: '#ff8042',
+        main: '#FF5722',
+        dark: '#e64a19',
         contrastText: '#ffffff',
       },
       info: {
