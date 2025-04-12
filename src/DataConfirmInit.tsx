@@ -52,7 +52,8 @@ export default function DataConfirmInit() {
    * Check if there is data in localStorage when the component mounts
    */
   useEffect(() => {
-    checkDataInStorage();
+    console.log(checkDataInStorage);
+    // checkDataInStorage();
   }, []);
 
   return (

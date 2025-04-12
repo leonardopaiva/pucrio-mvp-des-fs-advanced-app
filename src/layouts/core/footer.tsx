@@ -47,7 +47,7 @@ export default function Footer() {
                 href="https://especializacao.ccec.puc-rio.br/especializacao/desenvolvimento-full-stack"
                 target="_blank"
                 sx={{ '&:hover': { color: 'primary.main', textDecoration: 'underline' } }}>
-                MVP 3 - Puc Rio  <div className='test-update-cache'>v1</div>
+                MVP 3 - Puc Rio  <div className='test-update-cache'>v2</div>
                 <br /> Pós Graduação Desenvolvimento Full Stack
               </Link>
 
@@ -93,11 +93,11 @@ export default function Footer() {
               /
             </Typography>
 
-            <Tooltip title="Ver projeto no github" arrow>
+            <Tooltip title="Ver projeto no github - Componente Principal Gateway Api" arrow>
               <IconButton
                 color="inherit"
                 size="small"
-                href="https://github.com/leonardopaiva/pucrio-mvp-front-end-advanced-app"
+                href="https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-gateway-api"
                 aria-label="GitHub"
                 target="_blank"
                 sx={{ alignSelf: 'center' }}
