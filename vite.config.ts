@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import { VitePWA } from 'vite-plugin-pwa';
+import { VitePWA } from 'vite-plugin-pwa'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto',    // <— adicionamos isto
       includeAssets: [
         'favicon.ico',
         'apple-touch-icon.png',
@@ -29,8 +30,8 @@ export default defineConfig({
         ],
       },
       workbox: {
-        skipWaiting: true,     // força o novo SW a ativar imediatamente
-        clientsClaim: true,    // faz o SW assumir o controle das abas abertas
+        skipWaiting: true,       // <— adicionamos isto
+        clientsClaim: true,      // <— e isto
         runtimeCaching: [
           {
             urlPattern: /^https?:\/\/.*\.(jpg|jpeg|png|gif|svg)$/i,
@@ -51,6 +52,6 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 3000
-  }
-});
+    port: 3000,
+  },
+})
