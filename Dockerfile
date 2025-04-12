@@ -1,6 +1,6 @@
 # Dockerfile para o app React (frontend)
-# Deve estar na pasta ./app, conforme o contexto do docker-composee
 # deve-se rodar o comando npm run pwa para que exista o conteudo do dist/
+# ele irá copiar o conteúdo do dist par ao nginx/html
 
 FROM nginx:alpine
 
@@ -8,6 +8,7 @@ FROM nginx:alpine
 COPY dist/ /usr/share/nginx/html
 
 # Copia a configuração customizada do Nginx para sobrescrever o default
+# necessário para permitir o reload em rotas filhas
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expor a porta 80 para acesso HTTP
