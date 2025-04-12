@@ -47,7 +47,7 @@ export default function Footer() {
                 href="https://especializacao.ccec.puc-rio.br/especializacao/desenvolvimento-full-stack"
                 target="_blank"
                 sx={{ '&:hover': { color: 'primary.main', textDecoration: 'underline' } }}>
-                MVP 3 - Puc Rio  <div className='test-update-cache'>v5</div>
+                MVP 3 - Puc Rio  <div className='test-update-cache'>v6</div>
                 <br /> Pós Graduação Desenvolvimento Full Stack
               </Link>
 
