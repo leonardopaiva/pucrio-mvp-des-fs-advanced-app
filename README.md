@@ -77,9 +77,18 @@ These are some of the technologies used in this app.
 
 Thanks to the MVP professors, Marisa Silva, Dieinison Braga and Carlos Rocha.
 
-# Some links
+## About This Project
+ 
+This is the third MVP of the Full Stack Development Postgraduate Program at PUCRS University, Rio de Janeiro.
 
+**Main Component Gateway Api**: [https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-gateway-api](https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-gateway-api)  
+**APP**: [https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-app](https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-app)  
+**micro-auth-api**: [https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-auth-api](https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-auth-api)  
+**micro-queue-api**: [https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-queue-api](https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-queue-api)  
+**micro-appointments-api**: [https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-appointments-api](https://github.com/leonardopaiva/pucrio-mvp-des-fs-advanced-micro-appointments-api)  
+
+**youtube video presenting project**: [https://youtu.be/7QQ_WHTqXxk](https://youtu.be/7QQ_WHTqXxk)  
+**Live demo APP**: [https://pucriomvp3.leonardopaiva.com/](https://pucriomvp3.leonardopaiva.com/)  
+ 
 **Student**: Leonardo Souza Paiva  
-**Portfolio**: [www.leonardopaiva.com](http://www.leonardopaiva.com)  
-**MVP DEMO Video**: [https://youtu.be/0d-6IUMoDWs](https://youtu.be/0d-6IUMoDWs)  
-
+**Portfolio**: [www.leonardopaiva.com](http://www.leonardopaiva.com)
