@@ -66,8 +66,30 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
+    // Verificar se existem itens na fila de sincronização
+    const syncQueue = localStorage.getItem('sync-queue');
+    const pendingItems = syncQueue ? JSON.parse(syncQueue).filter((item: any) => 
+      item.syncStatus === 'sync-needed' || item.syncStatus === 'sync-error'
+    ) : [];
+    
+    if (pendingItems.length > 0) {
+      const confirmation = window.confirm(
+        "ATENÇÃO: Existem " + pendingItems.length + " item(s) que ainda não foram sincronizados. " +
+        "Se você sair agora, esses dados serão perdidos. " +
+        "Recomendamos sincronizar seus dados antes de sair. " +
+        "\n\nDeseja realmente sair e perder esses dados?"
+      );
+      
+      if (!confirmation) {
+        return; // Cancela o logout se o usuário não confirmar
+      }
+    }
+    
+    // Procede com o logout, removendo todos os dados do localStorage
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('appointments');
+    localStorage.removeItem('sync-queue');
     setToken(null);
     setUser(null);
     navigate('/auth/login');
