@@ -92,14 +92,41 @@ export const AppointmentProvider: React.FC<{ children: React.ReactNode }> = ({ c
       return;
     }
 
+    const existingUpdatedItem = syncQueueLocalStorageService.listItems().find(item =>
+      item.data &&
+      item.data.id === appointmentItem.id &&
+      item.status === 'updated' &&
+      item.syncStatus !== 'sync-completed'
+    );
+
+    if (existingUpdatedItem) {
+      const syncResult = syncQueueLocalStorageService.updateItem(existingUpdatedItem.id, {
+        ...existingUpdatedItem,
+        status: 'deleted',
+        syncStatus: 'sync-needed',
+        retryCount: 0,
+        lastAttempt: 0
+      });
+
+      if (!syncResult.status) {
+        alert("Error scheduling deletion: " + syncResult.message);
+        return;
+      }
+
+      appointmentStorage.removeItem(id);
+      refreshAppointments();
+      alert("Appointment marked for deletion and scheduled for synchronization.");
+      return;
+    }
+
     const existingCreatedItem = syncQueueLocalStorageService.listItems().find(item =>
       item.data &&
       item.data.id === appointmentItem.id &&
       item.status === 'created' &&
       item.syncStatus !== 'sync-completed'
     );
-    if (existingCreatedItem) {
 
+    if (existingCreatedItem) {
       const removeResult = syncQueueLocalStorageService.removeItem(existingCreatedItem.id);
       if (!removeResult.status) {
         alert("Error removing item from queue: " + removeResult.message);
@@ -111,31 +138,15 @@ export const AppointmentProvider: React.FC<{ children: React.ReactNode }> = ({ c
       return;
     }
 
-    const existingSyncItem = syncQueueLocalStorageService.listItems().find(item =>
-      item.data &&
-      item.data.id === appointmentItem.id &&
-      item.syncStatus !== 'sync-completed'
-    );
-    let result;
-    if (existingSyncItem) {
-      result = syncQueueLocalStorageService.updateItem(existingSyncItem.id, {
-        ...existingSyncItem,
-        status: 'deleted',
-        syncStatus: 'sync-needed',
-        retryCount: 0,
-        lastAttempt: 0
-      });
-    } else {
-      const syncItem: SyncQueueItem = {
-        id: appointmentItem.id,
-        status: 'deleted',
-        syncStatus: 'sync-needed',
-        retryCount: 0,
-        lastAttempt: 0,
-        data: { ...appointmentItem }
-      };
-      result = syncQueueLocalStorageService.addItem(syncItem);
-    }
+    const syncItem: SyncQueueItem = {
+      id: appointmentItem.id,
+      status: 'deleted',
+      syncStatus: 'sync-needed',
+      retryCount: 0,
+      lastAttempt: 0,
+      data: { ...appointmentItem }
+    };
+    const result = syncQueueLocalStorageService.addItem(syncItem);
     if (result.status) {
       appointmentStorage.removeItem(id);
       refreshAppointments();
@@ -179,7 +190,7 @@ export const AppointmentProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
     Performs operations on the appointments local storage and sync queue.
     Checks whether a sync item for updating this appointment already exists.
-    If found, it updates the existing sync item with the new data; otherwise,
+    If found, it updates the existing sync item with the new data, if not,
     it creates a new sync item for updating.
   */
   const updateAppointment = (appointment: Appointment): boolean => {
@@ -188,12 +199,36 @@ export const AppointmentProvider: React.FC<{ children: React.ReactNode }> = ({ c
       alert(updateResult.message);
       return false;
     }
+    
     const syncItems = syncQueueLocalStorageService.listItems();
+    
+    const existingCreatedItem = syncItems.find(item =>
+      item.data && item.data.id === appointment.id &&
+      item.status === 'created' &&
+      item.syncStatus !== 'sync-completed'
+    );
+    
+    if (existingCreatedItem) {
+      const syncResult = syncQueueLocalStorageService.updateItem(existingCreatedItem.id, {
+        ...existingCreatedItem,
+        data: { ...appointment }
+      });
+      
+      if (!syncResult.status) {
+        alert(syncResult.message);
+        return false;
+      }
+      
+      refreshAppointments();
+      return true;
+    }
+    
     const existingSyncItem = syncItems.find(item =>
       item.data && item.data.id === appointment.id &&
       item.status === 'updated' &&
       item.syncStatus !== 'sync-completed'
     );
+    
     let syncResult;
     if (existingSyncItem) {
       syncResult = syncQueueLocalStorageService.updateItem(existingSyncItem.id, {
@@ -211,10 +246,12 @@ export const AppointmentProvider: React.FC<{ children: React.ReactNode }> = ({ c
       };
       syncResult = syncQueueLocalStorageService.addItem(syncItem);
     }
+    
     if (!syncResult.status) {
       alert(syncResult.message);
       return false;
     }
+    
     refreshAppointments();
     return true;
   };
